@@ -12,7 +12,7 @@ public class flowerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (!collider.CompareTag("KNIFE_TAG"))
+        if (!collider.CompareTag(KNIFE_TAG))
         {
             return;
         }
