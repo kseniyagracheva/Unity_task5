@@ -32,6 +32,7 @@ public class SeedGrowth : MonoBehaviour
                     Destroy(currentGrowthStage);
                 }
 
+
                 elapsedTime = 0f; // —брасываем прошедшее врем€
 
                 // —оздаем новую модель дл€ следующего этапа роста на месте текущей модели семени
@@ -46,6 +47,10 @@ public class SeedGrowth : MonoBehaviour
                 {
                     SeedModelActive(false);
                 }
+            }
+            if (currentStage == growthStages.Length)
+            {
+                StopGrowing();
             }
         }
     }

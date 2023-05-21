@@ -101,10 +101,10 @@ MonoBehaviour:
   seedName: 
   growthTime: 2
   growthStages:
-  - {fileID: 8948015863083030723, guid: 1d44693c0adb19e4f974ff75a107e6a7, type: 3}
+  - {fileID: 8948015863083030723, guid: 41c426529ed024e4cbbe2b2a90aea6d2, type: 3}
   - {fileID: 2912986850728756656, guid: f92b1a5c99a25174c82fe1019e93d5e3, type: 3}
-  - {fileID: 4817392266084648782, guid: b147888ce3dd165428125c048d349ad0, type: 3}
-  - {fileID: 4621488657134570469, guid: ca4655defa7b7cd47ab3c2d5f7e1f6d3, type: 3}
+  - {fileID: 5851414809774421020, guid: a20e4a2f1275ae64a866c4b1697d14f9, type: 3}
+  - {fileID: 7963691143503853168, guid: 7fa99099aacbfb34d92956ecdd1ced7b, type: 3}
 --- !u!54 &-1725396548868788403
 Rigidbody:
   m_ObjectHideFlags: 0

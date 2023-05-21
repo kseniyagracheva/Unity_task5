@@ -2,73 +2,77 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Experience : MonoBehaviour
+public class Card : MonoBehaviour
 {
-    // структура, описывающая правила для перехода на следующий уровень
-    [Serializable]
-    public struct LevelRule
-    {
-        public LevelName name; // название уровня
-        public int experienceToNextLevel; // количество опыта, необходимого для перехода на следующий уровень
-    }
+    // Текст кнопки, когда семена можно купить
+    private const string AVAILABLE_TEXT = "Купить";
+    // Текст кнопки, когда семена нельзя купить
+    private const string UNAVAILABLE_TEXT = "Недоступно";
 
-    public UnityEvent LevelChanged = new UnityEvent(); // событие, которое вызывается при изменении уровня
+    // Текстовое поле для отображения стоимости семян
+    public Text textCost;
+    // Текстовое поле для отображения уровня, необходимого для покупки семян
+    public Text textExp;
+    // Кнопка для покупки семян
+    public Button buttonBuy;
 
-    private Text text; // компонент Text для отображения информации об уровне и количестве опыта
-    private static int EnumLength = Enum.GetNames(typeof(LevelName)).Length; // количество элементов в перечислении
-    [SerializeField] private LevelRule[] levelRules = new LevelRule[EnumLength]; // массив с правилами для каждого уровня
-    private int currentLevel; // текущий уровень игрока
-    private int currentExp; // текущее количество опыта
+    // Стоимость семян
+    public int cost;
+    // Уровень, необходимый для покупки семян
+    public Experience.LevelName level = Experience.LevelName.Новичок;
+    // Ссылка на объект семян
+    public GameObject seed;
 
-    // свойство для получения названия текущего уровня
-    public LevelName Level
-    {
-        get
-        {
-            return levelRules[currentLevel].name;
-        }
-    }
+    // Ссылка на магазин, в котором находится карточка
+    private Shop shop;
 
+    // Вызывается при запуске игры
     private void Start()
     {
-        text = GetComponent<Text>(); // получаем компонент Text
-        UpdateText(); // обновляем текст с текущим уровнем и количеством опыта
+        // Установка текста стоимости семян
+        textCost.text = $"{cost}$";
+        // Установка текста уровня, необходимого для покупки семян
+        textExp.text = level.ToString();
+        // Получение ссылки на магазин
+        shop = transform.parent.GetComponent<Shop>();
     }
 
-    // метод для добавления опыта
-    public void Increase(int value)
+    // Вызывается при нажатии кнопки покупки семян
+    public void BuySeed()
     {
-        currentExp += value; // добавляем заданное количество опыта к текущему количеству
-        if (currentExp >= levelRules[currentLevel].experienceToNextLevel && currentLevel < levelRules.Length - 1)
+        // Вызов метода покупки семян в объекте магазина
+        shop.BuySeed(seed, cost);
+    }
+
+    // Обновление доступности покупки семян на основе текущего уровня опыта
+    public void UpdateVisibility(Experience experience)
+    {
+        // Если текущий уровень опыта больше или равен уровню, необходимому для покупки семян,
+        // то семена доступны для покупки, иначе недоступны
+        if (experience.Level >= level)
         {
-            // если текущее количество опыта больше или равно необходимому для перехода на следующий уровень
-            // и текущий уровень не является последним в массиве
-            currentExp -= levelRules[currentLevel].experienceToNextLevel; // вычитаем количество опыта для перехода на следующий уровень
-            currentLevel++; // увеличиваем текущий уровень
-            LevelChanged?.Invoke(); // вызываем событие, сообщающее об изменении уровня
+            SetAvailable(true);
         }
-
-        UpdateText(); // обновляем текст с текущим уровнем и количеством опыта
+        else
+        {
+            SetAvailable(false);
+        }
     }
 
-    // метод для обновления текста с текущим уровнем и количеством опыта
-    private void UpdateText()
+    // Изменение доступности покупки семян и текста кнопки
+    private void SetAvailable(bool available)
     {
-        LevelRule levelRule = levelRules[currentLevel]; // получаем правила для текущего уровня
-        text.text = $"Уровень: {levelRule.name}\nОпыт: {currentExp} / {levelRule.experienceToNextLevel}"; // обновляем текст
-    }
+        // Изменение доступности кнопки
+        buttonBuy.interactable = available;
 
-    // перечисление с названиями уровней
-    public enum LevelName
-    {
-        Новичок = 1,
-        Любитель = 2,
-        Профи = 3,
-        Эксперт = 4
+        // Изменение текста кнопки в зависимости от доступности
+        string text = UNAVAILABLE_TEXT;
+        if (available) text = AVAILABLE_TEXT;
+        buttonBuy.GetComponentInChildren<Text>().text = text;
     }
 }
+
 
 

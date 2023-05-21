@@ -16,7 +16,7 @@ public class flowerController : MonoBehaviour
         {
             return;
         }
-
+        transform.SetParent(null);
         _rigidbody.isKinematic = false;
         _rigidbody.AddForce(Vector3.up * _power);
 

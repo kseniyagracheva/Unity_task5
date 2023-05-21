@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Wallet : MonoBehaviour
 {
     private Text text; // приватное поле для компонента Text, которое будет использоваться для обновления текста с количеством денег
-    private int money; // приватное поле для хранения количества денег
+    private int money = 50; // приватное поле для хранения количества денег
 
     private void Start()
     {

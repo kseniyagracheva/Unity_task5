@@ -12,12 +12,14 @@ public class Seller : MonoBehaviour
         Plant plant = other.GetComponent<Plant>(); // получаем компонент растения
         if (plant != null) // если объект, который упал в корзину для продажи, имеет компонент Plant
         {
-            SellPlant(plant); // продаем это растение
+            StartCoroutine(SellPlant(plant)); // продаем это растение
         }
     }
 
-    private void SellPlant(Plant plant)
+    private IEnumerator SellPlant(Plant plant)
     {
+        yield return new WaitForSeconds(2);
+        Destroy(plant.gameObject);
         experience.Increase(plant.Exp); // добавляем количество опыта, которое дает растение, к опыту игрока
         wallet.Increase(plant.Cost); // добавляем стоимость растения к балансу игрока в кошельке
     }
