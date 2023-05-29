@@ -486,8 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca34e5d8c555524cba1860c1ccdf4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 38
-  Exp: 38
+  Cost: 40
+  Exp: 40
 --- !u!1 &7963691143503854512
 GameObject:
   m_ObjectHideFlags: 0
