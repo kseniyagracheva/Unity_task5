@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4536999076225671651}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: attache
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3011832554009853723}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.38588527, y: 0.24075067, z: 0.2067997}
+  m_LocalPosition: {x: 0.002, y: 0.167, z: -0.007}
   m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5240526673663536344}
   - component: {fileID: 5240526673663536350}
   - component: {fileID: 5240526673663536351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flower_head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5240526673814464819}
   - component: {fileID: 5240526673814464817}
   - component: {fileID: 5240526673814464818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leaf_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5240526673877012416}
   - component: {fileID: 5240526673877012422}
   - component: {fileID: 5240526673877012423}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: stem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 5240526674004375666}
   - component: {fileID: 5240526674004375664}
   - component: {fileID: 5240526674004375665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leaf_small (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 5240526674445261517}
   - component: {fileID: 5240526674445261507}
   - component: {fileID: 5240526674445261516}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leaf_small (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 2772644520531467544}
   - component: {fileID: -735174666118615336}
   - component: {fileID: 652083289016430878}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u0446\u0432\u0435\u0442\u043E\u043A 4 \u0441\u0442\u0430\u0434\u0438\u044F
     4"
   m_TagString: Untagged
@@ -478,7 +478,7 @@ Transform:
   m_GameObject: {fileID: 5240526674739555018}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.017000198, y: -1.517, z: -0.120999575}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5240526674004375666}
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6207293245398581170}
-  _power: 50
+  _power: 30
 --- !u!54 &6207293245398581170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 5240526674976167292}
   - component: {fileID: 5240526674976167282}
   - component: {fileID: 5240526674976167283}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leaf_small (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
